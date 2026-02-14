@@ -25,8 +25,10 @@ func NewAuth() *Auth {
 	}
 }
 
-func recoverHandler() {
+func RecoverHandler() {
 	if r := recover(); r != nil {
 		fmt.Println("Error:", r)
+		fmt.Println("\nEnter to continue....")
+		fmt.Scanln()
 	}
 }
