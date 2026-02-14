@@ -11,14 +11,15 @@ func hash(pw string) string {
 }
 
 func (a *Auth) Register(firstName, lastName, email, password, confirmPass string) string {
+
 	for _, user := range a.Users {
 		if user.Email == email {
-			return "Email already registered"
+			panic("Email already registered")
 		}
 	}
 
 	if password != confirmPass {
-		return "Password not match"
+		panic("Password not match")
 	}
 
 	newUser := User{
